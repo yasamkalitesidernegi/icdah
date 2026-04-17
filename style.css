@@ -182,7 +182,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button,inp
 
 
 .hero-main-title{
-  font-size: clamp(45px, 7.2vw, 83px) !important;
+  font-size: clamp(28px, 4vw, 50px) !important;
 }
 .hero-conference-title{
   text-shadow: 0 10px 30px rgba(0,0,0,.28), 0 3px 10px rgba(0,0,0,.22);
