@@ -179,3 +179,17 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button,inp
   .date-node{ grid-template-columns: 1fr; gap:14px; }
   .dates-timeline::before{ display:none; }
 }
+
+
+.hero-main-title{
+  font-size: clamp(45px, 7.2vw, 83px) !important;
+}
+.hero-conference-title{
+  text-shadow: 0 10px 30px rgba(0,0,0,.28), 0 3px 10px rgba(0,0,0,.22);
+  animation: titleFloat 4s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes titleFloat{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-6px); }
+}

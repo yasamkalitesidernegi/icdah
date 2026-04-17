@@ -1,6 +1,5 @@
-ICDAH2026 static site package.
-- Home page redesigned with health-themed animated slider.
-- Logo added.
-- Themes, invitation, boards, venue, registration, and contact pages updated.
-- Contact form uses FormSubmit to forward to the provided Gmail address.
-- Update the _next URL in contact.html and the submit-paper href in index.html later.
+ICDAH2026 static site package updated.
+- Menu label changed to Önemli Tarihler.
+- YAKALDER Hakkında external menu added.
+- Themes page updated to icon-only cards.
+- Home hero ICDAH2026 title reduced and conference title animated.
