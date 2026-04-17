@@ -19,3 +19,39 @@ dots.forEach((dot,index)=>dot.addEventListener("click",()=>{showSlide(index);sta
 if(submitPaperBtn){submitPaperBtn.addEventListener("click",(e)=>{if(submitPaperBtn.getAttribute("href")==="#"){e.preventDefault();alert(html.classList.contains("lang-en")?"The paper submission link is not added yet. You can update the href value later.":"Bildiri gönderim bağlantısı henüz eklenmedi. Daha sonra href değerini güncelleyebilirsiniz.");}});}
 if(replyEmail){replyEmail.addEventListener("input",(e)=>{const hiddenReply=document.querySelector('input[name="_replyto"]');if(hiddenReply)hiddenReply.value=e.target.value;});}
 window.addEventListener("load",()=>{setLanguage(localStorage.getItem("siteLang")||"tr");showSlide(0);startSlider();});
+
+
+const conferenceDate = new Date("2026-10-22T09:00:00+03:00").getTime();
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+
+function updateCountdown() {
+  if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+  const now = new Date().getTime();
+  const distance = conferenceDate - now;
+
+  if (distance <= 0) {
+    daysEl.textContent = "000";
+    hoursEl.textContent = "00";
+    minutesEl.textContent = "00";
+    secondsEl.textContent = "00";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
+
+  daysEl.textContent = String(days).padStart(3, "0");
+  hoursEl.textContent = String(hours).padStart(2, "0");
+  minutesEl.textContent = String(minutes).padStart(2, "0");
+  secondsEl.textContent = String(seconds).padStart(2, "0");
+}
+
+window.addEventListener("load", () => {
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+});
